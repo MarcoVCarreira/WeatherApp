@@ -11,25 +11,26 @@
       <div class="search">
         <input type="text" placeholder="Enter City Name" spellcheck="false" />
         <button>
-          <img src="weather app icons/64x64 icon/magnifier_icon.png" />
+          <img src="images/search.png" />
         </button>
       </div>
 
       <div class="weather">
-        <img src="weather app icons/rain128px_icon.png" class="weather-icon" />
+        <img src="images/rain.png" class="weather-icon" />
         <h1 class="temp">22°c</h1>
         <h2 class="city">cape town</h2>
 
         <div class="details">
           <div class="col">
-            <img src="weather app icons/128px_humidity_icon.png" />
+            <img src="images/humidity.png" />
             <div>
               <p class="humidity">50%</p>
               <p>Humidity</p>
             </div>
           </div>
+
           <div class="col">
-            <img src="weather app icons/WindSpeed.png" />
+            <img src="images/windSpeed.png" />
             <div>
               <p class="wind">15 km/h</p>
               <p>Wind Speed</p>
@@ -51,22 +52,25 @@
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
         var data = await response.json();
 
+        console.log(data);
+
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML =
           Math.round(data.main.temp) + "°c";
-        document.querySelector(".humidty").innerHTML = data.main.humidty + "%";
+        document.querySelector(".humidity").innerHTML =
+          data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
         if (data.weather[0].main == "Clouds") {
-          weatherIcon.src = "weather app icons/128px_Cloudy=_icon.png";
+          weatherIcon.src = "images/cloudy.png";
         } else if (data.weather[0].main == "Clear") {
-          weatherIcon.src = "weather app icons/Clear.png";
+          weatherIcon.src = "images/clear.png";
         } else if (data.weather[0].main == "Rain") {
-          weatherIcon.src = "weather app icons/rain128px_icon.png";
+          weatherIcon.src = "images/rain.png";
         } else if (data.weather[0].main == "Drizzle") {
-          weatherIcon.src = "weather app icons/128px_drizzle_icon";
+          weatherIcon.src = "images/drizzle.png";
         } else if (data.weather[0].main == "Mist") {
-          weatherIcon.src = "weather app icons/128px_mist_icon";
+          weatherIcon.src = "images/mist.png";
         }
         document.querySelector(".weather").style.display = "block";
       }
