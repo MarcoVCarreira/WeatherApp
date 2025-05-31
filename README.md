@@ -1,1 +1,1 @@
-JavaScript WeatherApp - https://marcovcarreira.github.io/WeatherApp/
+JavaScript Project: WeatherApp - https://marcovcarreira.github.io/WeatherApp/
