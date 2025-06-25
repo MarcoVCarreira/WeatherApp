@@ -3,4 +3,4 @@
 
 
 
-JavaScript Project: WeatherApp - https://marcovcarreira.github.io/WeatherApp/
+Please have a look at the App here is the link - https://marcovcarreira.github.io/WeatherApp/
